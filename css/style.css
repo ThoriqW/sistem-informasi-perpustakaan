@@ -1,0 +1,153 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.dropdown-toggle {
+    outline: 0;
+}
+
+.wrap-content {
+    position: relative;
+    display: flex;
+}
+
+
+/* Sidebar CSS */
+
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    background-color: #393E46;
+}
+
+.title-app {
+    font-size: 1.3rem;
+}
+
+.icons-sidebar {
+    width: 25px;
+    margin-right: 8px;
+    display: inline-block;
+    text-align: center;
+}
+
+.dashboard-subtitle {
+    font-size: 13px;
+}
+
+.petugas-subtitle {
+    margin-top: 1rem;
+}
+
+.nav-link.active {
+    background-color: #00ADB5!important;
+}
+
+.nav-link.active:hover {
+    color: #fff!important;
+}
+
+.nav-link:hover {
+    color: #00ADB5!important;
+}
+
+/* Navbar */
+
+.navbar-custom {
+    height: 65px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    border: 1px solid #00ADB5;
+    color: #00ADB5;
+}
+
+.btn:hover {
+    background-color: #00ADB5;
+    color: #fff;
+}
+
+
+/* Dashboard CSS */
+
+.right-container {
+    width: 100%;
+    margin-left: 280px;
+}
+
+.title-page {
+    font-weight: 300;
+    margin-left: 15px;
+}
+
+.line-page {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.sub-title-page {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.card {
+    border: none;
+}
+
+.card-body {
+    background-color: #393E46;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-number {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.card-text {
+    font-size: 1.5rem;
+    margin-top: 5px;
+}
+
+.img-card {
+    width: 100px;
+    height: 100px;
+    filter: invert(47%) sepia(63%) saturate(1902%) hue-rotate(148deg) brightness(93%) contrast(102%);
+}
+
+/* Page Anggota Style */
+
+.table-anggota {
+    margin: 0 15px;
+}
+
+zg-watermark {
+    visibility: hidden;
+}
+
+zing-grid {
+    border-radius: 10px;
+}
+
+zg-caption {
+    background-color: #00ADB5;
+    padding: 0 15px;
+    border-radius: 10px 10px 0 0;
+}
+
