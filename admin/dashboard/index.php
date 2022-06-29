@@ -1,11 +1,11 @@
-<?php include_once "./partials/header.php"; ?>
+<?php include_once "../header.php"; ?>
 
 
 
 <?php
 
-  include './conn.php';
-  include './core.php';
+  include '../../conn.php';
+  include '../../core.php';
 
   //query total anggota
   $sqlAnggota = "SELECT * FROM anggota ORDER BY id_anggota ASC";
@@ -28,7 +28,7 @@
   <hr>
   <div class="dashboard-profile">
     <div class="img-box-profile">
-      <img class="foto-profile" src="../img/profile-user.png" alt="foto-profile">
+      <img class="foto-profile" src="../../img/profile-user.png" alt="foto-profile">
     </div>
     <div>
       <span class="welcome-profile">Welcome</span>
@@ -47,26 +47,26 @@
       </a>
     </li>
     <li>
-      <a href="anggota.php" class="nav-link text-white">
+      <a href="../anggota/anggota.php" class="nav-link text-white">
         <div class="icons-sidebar"><i class="fas fa-user-group fa-lg icon-sidebar"></i></div>
         Anggota
       </a>
     </li>
     <li>
-      <a href="./buku.php" class="nav-link text-white">
+      <a href="../buku/buku.php" class="nav-link text-white">
         <div class="icons-sidebar"><i class="fas fa-book fa-lg icon-sidebar"></i></div>
         Buku
       </a>
     </li>
     <p class="dashboard-subtitle petugas-subtitle">TRANSAKSI</p>
     <li>
-      <a href="./data_peminjaman.php" class="nav-link text-white">
+      <a href="../transaksi/data_peminjaman.php" class="nav-link text-white">
         <div class="icons-sidebar"><i class="fa fa-chevron-circle-up fa-lg icon-sidebar" aria-hidden="true"></i></div>
         Peminjaman
       </a>
     </li>
     <li>
-      <a href="#" class="nav-link text-white">
+      <a href="../transaksi/data_pengembalian.php" class="nav-link text-white">
         <div class="icons-sidebar"><i class="fa fa-chevron-circle-down fa-lg icon-sidebar" aria-hidden="true"></i></div>
         Pengembalian
       </a>
@@ -111,7 +111,7 @@
           <div class="card" style="width: 18rem;">
             <div class="card-body">
               <div class="card-content">
-                <img class="img-card" src="img/open-book.png" alt="Book">
+                <img class="img-card" src="../../img/open-book.png" alt="Book">
                 <p class="card-number"><?php echo mysqli_num_rows($queryBuku) ?></p>
               </div>
               <p class="card-text">Total Buku</p>
@@ -122,7 +122,7 @@
           <div class="card" style="width: 18rem;">
             <div class="card-body">
               <div class="card-content">
-                <img class="img-card" src="img/anggota.png" alt="Book">
+                <img class="img-card" src="../../img/anggota.png" alt="Book">
                 <p class="card-number"><?php echo mysqli_num_rows($queryAnggota) ?></p>
               </div>
               <p class="card-text">Total Anggota</p>
@@ -133,7 +133,7 @@
           <div class="card" style="width: 18rem;">
             <div class="card-body">
               <div class="card-content">
-                <img class="img-card" src="img/Peminjaman.png" alt="Book">
+                <img class="img-card" src="../../img/Peminjaman.png" alt="Book">
                 <p class="card-number">30</p>
               </div>
               <p class="card-text">Peminjaman</p>
@@ -144,7 +144,7 @@
           <div class="card" style="width: 18rem;">
             <div class="card-body">
               <div class="card-content">
-                <img class="img-card" src="img/admin.png" alt="Book">
+                <img class="img-card" src="../../img/admin.png" alt="Book">
                 <p class="card-number">1</p>
               </div>
               <p class="card-text">Admin</p>
@@ -157,4 +157,4 @@
 </div>
 
 
-<?php include_once "./partials/footer.php"; ?>
+<?php include_once "../footer.php"; ?>
