@@ -1,4 +1,39 @@
-<?php include_once "./partials/header.php"; ?>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.98.0">
+  <title>Sistem Perpustakaan</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sidebars/">
+
+  <!-- Bosstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Font Family -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="./asset/css/style.css?v=<?php echo time(); ?>">
+</head>
+
+<body>
+
+<div class="wrap-content">
 
 
 
@@ -28,7 +63,7 @@
   <hr>
   <div class="dashboard-profile">
     <div class="img-box-profile">
-      <img class="foto-profile" src="../img/profile-user.png" alt="foto-profile">
+      <img class="foto-profile" src="img/profile-user.png" alt="foto-profile">
     </div>
     <div>
       <span class="welcome-profile">Welcome</span>
@@ -47,13 +82,7 @@
       </a>
     </li>
     <li>
-      <a href="anggota.php" class="nav-link text-white">
-        <div class="icons-sidebar"><i class="fas fa-user-group fa-lg icon-sidebar"></i></div>
-        Anggota
-      </a>
-    </li>
-    <li>
-      <a href="./buku.php" class="nav-link text-white">
+      <a href="./views/buku/viewBuku.php" class="nav-link text-white">
         <div class="icons-sidebar"><i class="fas fa-book fa-lg icon-sidebar"></i></div>
         Buku
       </a>
@@ -65,19 +94,6 @@
         Peminjaman
       </a>
     </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <div class="icons-sidebar"><i class="fa fa-chevron-circle-down fa-lg icon-sidebar" aria-hidden="true"></i></div>
-        Pengembalian
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <div class="icons-sidebar"><i class="fa fa-file fa-lg icon-sidebar"></i></div>
-        Laporan
-      </a>
-      </a>
-    </li>
   </ul>
   <hr>
 </div>
@@ -86,10 +102,9 @@
   <!-- Navbar -->
   <nav class="navbar navbar-custom bg-light">
     <div class="container-fluid">
-      <button class="btn open-navbar change" onclick="navButton(this)">Menu</button>
       <a class="navbar-brand tanggal-navbar"></a>
       <form class="d-flex" role="search">
-        <a href="../logout.php" class="btn" type="submit">Keluar</a>
+        <a href="logout.php" class="btn" type="submit">Keluar</a>
       </form>
     </div>
   </nav>
@@ -108,7 +123,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 13rem;">
             <div class="card-body">
               <div class="card-content">
                 <img class="img-card" src="img/open-book.png" alt="Book">
@@ -119,35 +134,13 @@
           </div>
         </div>
         <div class="col-md-3">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <div class="card-content">
-                <img class="img-card" src="img/anggota.png" alt="Book">
-                <p class="card-number"><?php echo mysqli_num_rows($queryAnggota) ?></p>
-              </div>
-              <p class="card-text">Total Anggota</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 13rem;">
             <div class="card-body">
               <div class="card-content">
                 <img class="img-card" src="img/Peminjaman.png" alt="Book">
                 <p class="card-number">30</p>
               </div>
               <p class="card-text">Peminjaman</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <div class="card-content">
-                <img class="img-card" src="img/admin.png" alt="Book">
-                <p class="card-number">1</p>
-              </div>
-              <p class="card-text">Admin</p>
             </div>
           </div>
         </div>

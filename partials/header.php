@@ -28,7 +28,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
   <!-- Custom styles for this template -->
-  <link rel="stylesheet" href="asset/css/style.css?v=<?php echo time(); ?>">
+  <link rel="stylesheet" href="../../asset/css/style.css?v=<?php echo time(); ?>">
 </head>
 
 <body>

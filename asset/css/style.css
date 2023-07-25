@@ -34,6 +34,10 @@ body {
     background-color: #393E46;
 }
 
+.table {
+    font-size: 14px;
+}
+
 /* Login Page */
 
 .container-login {
@@ -207,8 +211,8 @@ body {
 }
 
 .img-card {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     filter: invert(47%) sepia(63%) saturate(1902%) hue-rotate(148deg) brightness(93%) contrast(102%);
 }
 
@@ -218,22 +222,40 @@ body {
     margin-bottom: 16px;
 }
 
-zg-watermark {
-    visibility: hidden;
+/* Profile Anggota */
+
+.container-profile {
+    margin-top: 20px;
 }
 
-zing-grid {
-    border-radius: 10px;
+.foto-anggota {
+    width: 150px;
 }
 
-zg-caption {
-    background-color: #393E46;
-    padding: 0 15px;
-    border-radius: 10px 10px 0 0;
+.nama-profile-anggota {
+    font-weight: 500;
+    font-size: 1.5rem;
 }
 
-input {
-    padding: 5px;
+.box-profile {
+    margin-bottom: 10px;
+}
+
+.p-profile {
+    margin-top: 10px;
+}
+
+.title-profile {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.line-profile {
+    margin-top: 10px;
+}
+
+.btn-profile {
+    margin-top: 30px;
 }
 
 /*Tambah Anggota */
