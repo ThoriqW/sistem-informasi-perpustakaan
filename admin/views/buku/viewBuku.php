@@ -1,7 +1,5 @@
-<!-- Connected to database -->
 <?php include_once "../../../conn.php" ?>
 
-<!-- Header HTML -->
 <?php include_once "../../header.php"; ?>
 
 <?php 
@@ -13,6 +11,7 @@
   }
 
 ?>
+
 
 <div class="d-flex flex-column flex-shrink-0 p-3 text-white sidebar" style="width: 280px;">
   <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
@@ -46,20 +45,20 @@
       </a>
     </li>
     <li>
-      <a href="../buku/viewBuku.php" class="nav-link text-white">
+      <a href="../buku/viewBuku.php" class="nav-link  active">
         <div class="icons-sidebar"><i class="fas fa-book fa-lg icon-sidebar"></i></div>
         Buku
       </a>
     </li>
     <p class="dashboard-subtitle petugas-subtitle">TRANSAKSI</p>
     <li>
-      <a href="../peminjaman/viewPeminjaman.php" class="nav-link text-white ">
+      <a href="../peminjaman/viewPeminjaman.php" class="nav-link text-white">
         <div class="icons-sidebar"><i class="fa fa-chevron-circle-up fa-lg icon-sidebar" aria-hidden="true"></i></div>
         Peminjaman
       </a>
     </li>
     <li>
-      <a href="../peminjaman/viewPengembalian.php" class="nav-link active">
+      <a href="../pengembalian/viewPengembalian.php" class="nav-link text-white">
         <div class="icons-sidebar"><i class="fa fa-chevron-circle-down fa-lg icon-sidebar" aria-hidden="true"></i></div>
         Pengembalian
       </a>
@@ -91,8 +90,14 @@
 
     <!-- Content Anggota -->
 
-    <h3 class="title-page">Buku Kembali</h3>
+    <h3 class="title-page">Buku</h3>
     <hr class="line-page">
+
+    <div class="tambah-anggota-btn">
+      <a href="viewTambahBuku.php" class="btn">
+          Tambah Buku
+      </a>
+    </div>
 
     <div class="table">
 
@@ -101,46 +106,44 @@
           <tr>
               <th>No</th>
               <th>ID</th>
-              <th>Nama Anggota</th>
-              <th>Nama Buku</th>
-              <th>Nama Admin</th>
-              <th>Status</th>
+              <th>Judul Buku</th>
+              <th>Pengarang</th>
+              <th>Penerbit</th>
+              <th>Tahun</th>
               <th>Action</th>
           </tr>
       </thead>
       <tbody>
 
-        <?php
-            $sql = "SELECT peminjaman.id_peminjaman, peminjaman.status, anggota.nama, buku.judul_buku, users.fullname FROM peminjaman 
-                        INNER JOIN anggota ON peminjaman.id_anggota = anggota.id_anggota 
-                        INNER JOIN buku ON peminjaman.id_buku = buku.id_buku 
-                        INNER JOIN users ON peminjaman.id_admin = users.id_admin
-                        WHERE status='Dikembalikan'";
-            $query = mysqli_query($mysqli, $sql);
+          <?php
+          $sql = "SELECT * FROM buku";
+          $query = mysqli_query($mysqli, $sql);
 
-            $number = 0;
+          $number = 0;
 
-            while($anggota = mysqli_fetch_array($query)){
-              $number += 1
-        ?>
-             <tr>
+          while($buku = mysqli_fetch_array($query)){
 
-                <td> <?php echo $number; ?> </td>
-                <td> <?php echo $anggota['id_peminjaman']; ?> </td>
-                <td> <?php echo $anggota['nama']; ?> </td>
-                <td> <?php echo $anggota['judul_buku'];; ?> </td>
-                <td> <?php echo $anggota['fullname']; ?></td>
-                <td> <?php echo $anggota['status']; ?> </td>
+              $number += 1;
 
-                <td>
-                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class='btn btn-table view' data-id="<?php echo $anggota['id_peminjaman']; ?>">View</a>
-                </td>
+              echo "<tr>";
 
-              </tr>
-            
-        <?php
-            }
-        ?>
+              echo "<td>".$number."</td>";
+              echo "<td>".$buku['id_buku']."</td>";
+              echo "<td>".$buku['judul_buku']."</td>";
+              echo "<td>".$buku['pengarang']."</td>";
+              echo "<td>".$buku['penerbit']."</td>";
+              echo "<td>".$buku['tahun']."</td>";
+
+              echo "<td>";
+              echo "<a class='btn btn-table edit' href='viewEditBuku.php?id_buku=".$buku['id_buku']."'>Edit</a>";
+              echo "<a class='btn btn-table view' href='viewDetailBuku.php?id_buku=".$buku['id_buku']."'>View</a>";
+              echo "<a class='btn btn-table' href='../../models/buku/deleteBuku.php?id_buku=".$buku['id_buku']."'>Hapus</a>";
+              echo "</td>";
+
+              echo "</tr>";
+          }
+          ?>
+
       </tbody>
       </table>
 
@@ -151,18 +154,5 @@
   </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Detail Peminjaman</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="id-peminjaman-modal"></div>
-    </div>
-  </div>
-</div>
 
 <?php include_once "../../footer.php"; ?>

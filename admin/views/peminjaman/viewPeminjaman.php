@@ -4,6 +4,7 @@
 <!-- Header HTML -->
 <?php include_once "../../header.php"; ?>
 
+
 <?php 
 
   session_start();
@@ -40,7 +41,7 @@
       </a>
     </li>
     <li>
-      <a href="../anggota/viewAnggota.php" class="nav-link text-white" aria-current="page">
+      <a href="../anggota/anggota.php" class="nav-link text-white" aria-current="page">
         <div class="icons-sidebar"><i class="fas fa-user-group fa-lg icon-sidebar"></i></div>
         Anggota
       </a>
@@ -53,13 +54,13 @@
     </li>
     <p class="dashboard-subtitle petugas-subtitle">TRANSAKSI</p>
     <li>
-      <a href="../peminjaman/viewPeminjaman.php" class="nav-link text-white ">
+      <a href="../peminjaman/viewPeminjaman.php" class="nav-link active">
         <div class="icons-sidebar"><i class="fa fa-chevron-circle-up fa-lg icon-sidebar" aria-hidden="true"></i></div>
         Peminjaman
       </a>
     </li>
     <li>
-      <a href="../peminjaman/viewPengembalian.php" class="nav-link active">
+      <a href="../pengembalian/viewPengembalian.php" class="nav-link text-white">
         <div class="icons-sidebar"><i class="fa fa-chevron-circle-down fa-lg icon-sidebar" aria-hidden="true"></i></div>
         Pengembalian
       </a>
@@ -91,7 +92,14 @@
 
     <!-- Content Anggota -->
 
-    <h3 class="title-page">Buku Kembali</h3>
+    <h3 class="title-page">Peminjaman</h3>
+
+    <div class="tambah-anggota-btn">
+      <a href="viewFormPeminjaman.php" class="btn">
+          Pinjam Buku
+      </a>
+    </div>
+
     <hr class="line-page">
 
     <div class="table">
@@ -115,13 +123,13 @@
                         INNER JOIN anggota ON peminjaman.id_anggota = anggota.id_anggota 
                         INNER JOIN buku ON peminjaman.id_buku = buku.id_buku 
                         INNER JOIN users ON peminjaman.id_admin = users.id_admin
-                        WHERE status='Dikembalikan'";
+                        WHERE status='Dipinjam'";
             $query = mysqli_query($mysqli, $sql);
 
             $number = 0;
 
             while($anggota = mysqli_fetch_array($query)){
-              $number += 1
+              $number += 1;
         ?>
              <tr>
 
@@ -133,7 +141,7 @@
                 <td> <?php echo $anggota['status']; ?> </td>
 
                 <td>
-                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class='btn btn-table view' data-id="<?php echo $anggota['id_peminjaman']; ?>">View</a>
+                  <a data-bs-toggle="modal" data-bs-target="#exampleModal" class='btn btn-table view' data-id="<?php echo $anggota['id_peminjaman']; ?>">View</a>
                 </td>
 
               </tr>
